@@ -24,9 +24,54 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="footer-container">
+<footer>
     <div class="footer">
-        <?php echo $this->getChildHtml() ?>
-        <address class="copyright"><?php echo $this->getCopyright() ?></address>
+        <menu>
+            <ul>
+                <li><a href="#">ЖЕНСКАЯ ОДЕЖДА</a></li>
+                <li><a href="#">МУЖСКАЯ ОДЕЖДА</a></li>
+                <li><a href="#">ДЕТСКАЯ ОДЕЖДА</a></li>
+                <li><a href="#">АКСЕССУАРЫ</a></li>
+                <li><a href="#">АКЦИИ</a></li>
+                <li><a href="#">КОНТАКТЫ</a></li>
+            </ul>
+        </menu>
+        <div class="copyright">
+            <p>Copyright <?=date("Y")?> <br />Все права защищены</p>
+        </div>
+        <div class="social">
+            <ul>
+                <li><a href="#"><img src="/img/socicon_vk.png" alt=""></a></li>
+                <li><a href="#"><img src="/img/socicon_fb.png" alt=""></a></li>
+                <li><a href="#"><img src="/img/socicon_tw.png" alt=""></a></li>
+                <li><a href="#"><img src="/img/socicon_gp.png" alt=""></a></li>
+            </ul>
+        </div>
+        <div class="phone">
+            <p><span>+7(123)</span><br>123 45 67</p>
+        </div>
+        <div class="email">
+            <a href="mailto:mail@mail.com">mail@mail.com</a>
+        </div>
     </div>
+</footer>
+
+<div class="fade">
+</div>
+<div class="popup">
+    <div class="close"></div>
+    <form method="post">
+        <p>ВХОД</p>
+        <div class="social">
+            <ul>
+                <li><a href="#"><img src="/img/socicon_vk.png" alt=""></a></li>
+                <li><a href="#"><img src="/img/socicon_fb.png" alt=""></a></li>
+                <li><a href="#"><img src="/img/socicon_tw.png" alt=""></a></li>
+                <li><a href="#"><img src="/img/socicon_gp.png" alt=""></a></li>
+            </ul>
+        </div>
+        <label>Email<input type="email" name="email"></label>
+        <label>Пароль<input type="password" name="pass"></label>
+        <button>ВОЙТИ <img src="img/1.png" alt=""></button><a href="#" title="">Забыли пароль?</a><a href="#" title="">Регистрация</a>
+    </form>
 </div>
