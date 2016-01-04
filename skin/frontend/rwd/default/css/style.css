@@ -978,6 +978,7 @@ footer .email a:hover {
 	display:block;
 	margin-top:15px;
 	text-decoration:none;
+    cursor: pointer;
 }
 
 .register form button
@@ -3030,6 +3031,13 @@ input[type="radio"]:checked + label::before
 }
 #registration .capcha input {
     width: 73px;
+}
+#registration .captcha-img {
+    position:relative;
+    top:20px;
+}
+#registration .capcha-reload {
+    cursor: pointer;
 }
 #registration button
 {

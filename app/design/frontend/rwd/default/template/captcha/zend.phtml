@@ -30,8 +30,11 @@
 <?php $captcha = $this->getCaptchaModel() ?>
 
 <div class="capcha">
-    <img id="<?php echo $this->getFormId() ?>" class="captcha-img" style="position:relative;top:20px;" height="<?php echo $this->getImgHeight() ?>" src="<?php echo $captcha->getImgSrc() ?>"/><img src="/img/arrow_capcha.png" alt=""><input name="<?php echo Mage_Captcha_Helper_Data::INPUT_NAME_FIELD_VALUE ?>[<?php echo $this->getFormId()?>]" type="text" id="captcha_<?php echo $this->getFormId() ?>" />
-    <a href="#" title="" onclick="$('<?php echo $this->getFormId()?>').captcha.refresh(this)">Обновить капчу (CAPTCHA)</a>
+    <img id="<?php echo $this->getFormId() ?>" class="captcha-img" height="<?php echo $this->getImgHeight() ?>" src="<?php echo $captcha->getImgSrc() ?>"/><img src="/img/arrow_capcha.png" alt="">
+
+    <input name="<?php echo Mage_Captcha_Helper_Data::INPUT_NAME_FIELD_VALUE ?>[<?php echo $this->getFormId()?>]" type="text" id="captcha_<?php echo $this->getFormId() ?>" />
+
+    <a id="captcha-reload" class="captcha-reload" title="" onclick="$('<?php echo $this->getFormId()?>').captcha.refresh(this)">Обновить капчу (CAPTCHA)</a>
 </div>
 
 
