@@ -41,92 +41,176 @@
     <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
     <input type="hidden" name="related_product" id="related-products-field" value="" />
 
-    <div class="aside_product">
-        <?php echo $this->getChildHtml('media') ?>
-        <div class="paymentmethods paymentmethods2">
-            <h1 class="headicon hicon_mail">СПОСОБЫ ОПЛАТЫ</h1>
-            <img src="/img/payments2.png" alt="">
-        </div>
-    </div>
+    <div class="product_top">
 
-
-
-    <div class="section_product">
-        <div class="product_name">
-            <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
-            <p class="articul">Артикул  BR019EWFZN94</p>
-
-            <?php if ($_product->isSaleable() && $this->hasOptions()):?>
-                <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
-            <?php endif;?>
-        </div>
-        <div class="product_delivery">
-            <div class="payment">
-                <img src="/img/dopay.png" alt="" />
-                <a href="#" title="">ОПЛАТА</a>
-            </div>
-            <div class="delivery">
-                <img src="/img/delivery.png" alt="" />
-                <a href="#" title="">ДОСТАВКА</a>
+        <div class="aside_product">
+            <?php echo $this->getChildHtml('media') ?>
+            <div class="paymentmethods paymentmethods2">
+                <h1 class="headicon hicon_mail">СПОСОБЫ ОПЛАТЫ</h1>
+                <img src="/img/payments2.png" alt="">
             </div>
         </div>
-        <div class="product_description">
-            <p><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></p>
+
+
+
+        <div class="section_product">
+            <div class="product_name">
+                <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+                <p class="articul">Артикул  <?=$_product->getSku()?></p>
+
+                <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                    <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+                <?php endif;?>
+            </div>
+            <div class="product_delivery">
+                <div class="payment">
+                    <img src="/img/dopay.png" alt="" />
+                    <a href="#" title="">ОПЛАТА</a>
+                </div>
+                <div class="delivery">
+                    <img src="/img/delivery.png" alt="" />
+                    <a href="#" title="">ДОСТАВКА</a>
+                </div>
+            </div>
+            <div class="product_description">
+                <p><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></p>
+            </div>
+
+            <table class="product_table">
+                <?php if($_product['size_photo']) : ?>
+                    <tr>
+                        <td>Размер модели на фото </td>
+                        <td><?=$_product['size_photo']?></td>
+                    </tr>
+                <?php endif; ?>
+                <?php if($_product['height_size']) : ?>
+                    <tr>
+                        <td>Рост модели на фото </td>
+                        <td><?=$_product['height_size']?></td>
+                    </tr>
+                <?php endif; ?>
+                <?php if($_product['option_model']) : ?>
+                    <tr>
+                        <td>Параметры модели </td>
+                        <td><?=$_product['option_model']?></td>
+                    </tr>
+                <?php endif; ?>
+                <?php if($_product['composition']) : ?>
+                    <tr>
+                        <td>Состав </td>
+                        <td><?=$_product['composition']?></td>
+                    </tr>
+                <?php endif; ?>
+                <?php if($_product['height_model']) : ?>
+                    <tr>
+                        <td>Длина </td>
+                        <td><?=$_product['height_model']?></td>
+                    </tr>
+                <?php endif; ?>
+                <?php if($_product['size_arm']) : ?>
+                    <tr>
+                        <td>Длина рукава </td>
+                        <td><?=$_product['size_arm']?></td>
+                    </tr>
+                <?php endif; ?>
+                <?php if($_product->getAttributeText('color_model')) : ?>
+                    <tr>
+                        <td>Цвет </td>
+                        <td><?=$_product->getAttributeText('color_model')?></td>
+                    </tr>
+                <?php endif; ?>
+                <?php if($_product->getAttributeText('type_knitwear')) : ?>
+                    <tr>
+                        <td>Тип трикотажа </td>
+                        <td><?=$_product->getAttributeText('type_knitwear')?></td>
+                    </tr>
+                <?php endif; ?>
+            </table>
         </div>
 
-        <table class="product_table">
-            <?php if($_product['size_photo']) : ?>
-                <tr>
-                    <td>Размер модели на фото </td>
-                    <td><?=$_product['size_photo']?></td>
-                </tr>
-            <?php endif; ?>
-            <?php if($_product['height_size']) : ?>
-                <tr>
-                    <td>Рост модели на фото </td>
-                    <td><?=$_product['height_size']?></td>
-                </tr>
-            <?php endif; ?>
-            <?php if($_product['option_model']) : ?>
-                <tr>
-                    <td>Параметры модели </td>
-                    <td><?=$_product['option_model']?></td>
-                </tr>
-            <?php endif; ?>
-            <?php if($_product['composition']) : ?>
-                <tr>
-                    <td>Состав </td>
-                    <td><?=$_product['composition']?></td>
-                </tr>
-            <?php endif; ?>
-            <?php if($_product['height_model']) : ?>
-                <tr>
-                    <td>Длина </td>
-                    <td><?=$_product['height_model']?></td>
-                </tr>
-            <?php endif; ?>
-            <?php if($_product['size_arm']) : ?>
-                <tr>
-                    <td>Длина рукава </td>
-                    <td><?=$_product['size_arm']?></td>
-                </tr>
-            <?php endif; ?>
-            <?php if($_product->getAttributeText('color_model')) : ?>
-                <tr>
-                    <td>Цвет </td>
-                    <td><?=$_product->getAttributeText('color_model')?></td>
-                </tr>
-            <?php endif; ?>
-            <?php if($_product->getAttributeText('type_knitwear')) : ?>
-                <tr>
-                    <td>Тип трикотажа </td>
-                    <td><?=$_product->getAttributeText('type_knitwear')?></td>
-                </tr>
-            <?php endif; ?>
-        </table>
     </div>
 
+    <?php if (count($_product->getMediaGalleryImages()) > 0): ?>
+    <div class="product_photos">
+        <h1 class="headicon hicon_about">ФОТОГРАФИИ ТОВАРА</h1>
+        <a href="#" class="seeall">отзывы о товаре</a>
+        <div class="slower">
+            <a href="#" class="prev" title=""></a>
+            <div class="carousel">
+                <ul>
+                    <?php $i=0; foreach ($_product->getMediaGalleryImages() as $_image): ?>
+                        <?php if ($_product->getMediaGalleryImages($_image)): ?>
+                            <li>
+                                <a class="thumb-link" href="#" title="<?php echo $this->escapeHtml($_image->getLabel()) ?>" data-image-index="<?php echo $i; ?>">
+                                    <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile()); ?>"
+                                         width="333" height="488" alt="<?php echo $this->escapeHtml($_image->getLabel()) ?>" />
+                                </a>
+                            </li>
+                        <?php endif; ?>
+                    <?php $i++; endforeach; ?>
+                </ul>
+            </div>
+            <a href="#" class="next" title=""></a>
+        </div>
+    </div>
+    <?php endif; ?>
+
+
+    <div class="product_bottom">
+
+        <div class="feedback">
+            <h1 class="headicon hicon_mail">ОТПРАВИТЬ<br> СООБЩЕНИЕ</h1>
+            <div class="feedbackform">
+                <form action="">
+                    <ul>
+                        <li class="name"><input type="text" placeholder="ФИО" /></li>
+                        <li class="email"><input type="text" placeholder="email" /></li>
+                        <li class="text"><textarea placeholder="текст сообщения"></textarea></li>
+                        <li class="submit"><button type="submit">ОТПРАВИТЬ</button></li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+
+        <div class="liders">
+            <div class="duablehead">
+                <h1 class="headicon hicon_lider">ЛИДЕРЫ ПРОДАЖ</h1>
+                <a href="#" class="seeall">смотреть все</a>
+            </div>
+            <div class="short_product">
+                <section>
+                    <img src="img/product.jpg" alt="" class="product_img"/>
+                    <a href="#" class="product_head">Куртка женская зимняя</a>
+                    <p>7 600 <span>руб.</span></p>
+                    <a href="#" class="buy">
+                        <img src="img/buy.png" alt="">
+                        <span>КУПИТЬ</span>
+                    </a>
+                </section>
+                <section>
+                    <img src="img/product.jpg" alt="" class="product_img"/>
+                    <a href="#" class="product_head">Куртка женская зимняя</a>
+                    <p>7 600 <span>руб.</span></p>
+                    <a href="#" class="buy">
+                        <img src="img/buy.png" alt="">
+                        <span>КУПИТЬ</span>
+                    </a>
+                </section>
+                <section>
+                    <img src="img/product.jpg" alt="" class="product_img"/>
+                    <a href="#" class="product_head">Куртка женская зимняя</a>
+                    <p>7 600 <span>руб.</span></p>
+                    <a href="#" class="buy">
+                        <img src="img/buy.png" alt="">
+                        <span>КУПИТЬ</span>
+                    </a>
+                </section>
+            </div>
+        </div>
+
+    </div>
 </form>
+
 
 
 
@@ -181,8 +265,3 @@
     }.bind(productAddToCartForm);
     //]]>
 </script>
-<style>
-    dt label {
-        display: none;
-    }
-</style>
