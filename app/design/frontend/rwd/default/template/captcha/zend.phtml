@@ -40,6 +40,9 @@
 
 <script type="text/javascript">//<![CDATA[
     $('<?php echo $this->getFormId() ?>').captcha = new Captcha('<?php echo $this->getRefreshUrl() ?>', '<?php echo $this->getFormId() ?>');
+    //Костыль - 1 загруженая капча не работает (first load captcha dont work)
+    $('<?php echo $this->getFormId()?>').captcha.refresh();
+    //Костыль
     //]]></script>
 
 <?php if ($captcha->isCaseSensitive()) :?>

@@ -36,156 +36,153 @@
 <script type="text/javascript">
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
 </script>
-<div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
-<div class="product-view">
-    <div class="product-essential">
-        <form action="<?php echo $this->getSubmitUrl($_product, array('_secure' => $this->_isSecure())) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
-            <?php echo $this->getBlockHtml('formkey') ?>
-            <div class="no-display">
-                <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
-                <input type="hidden" name="related_product" id="related-products-field" value="" />
-            </div>
+<form action="<?php echo $this->getSubmitUrl($_product, array('_secure' => $this->_isSecure())) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+    <?php echo $this->getBlockHtml('formkey') ?>
+    <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+    <input type="hidden" name="related_product" id="related-products-field" value="" />
 
-            <div class="product-img-box">
-                <div class="product-name">
-                    <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
-                </div>
-                <?php echo $this->getChildHtml('media') ?>
-            </div>
-
-            <div class="product-shop">
-                <div class="product-name">
-                    <span class="h1"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></span>
-                </div>
-
-                <div class="price-info">
-                    <?php echo $this->getPriceHtml($_product); ?>
-                    <?php echo $this->getChildHtml('bundle_prices') ?>
-                    <?php echo $this->getTierPriceHtml() ?>
-                </div>
-
-                <div class="extra-info">
-                    <?php echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
-                    <?php echo $this->getChildHtml('product_type_availability'); ?>
-                </div>
-
-                <?php echo $this->getChildHtml('alert_urls') ?>
-
-                <?php if ($_product->getShortDescription()):?>
-                    <div class="short-description">
-                        <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
-                    </div>
-                <?php endif;?>
+    <div class="aside_product">
+        <?php echo $this->getChildHtml('media') ?>
+        <div class="paymentmethods paymentmethods2">
+            <h1 class="headicon hicon_mail">СПОСОБЫ ОПЛАТЫ</h1>
+            <img src="/img/payments2.png" alt="">
+        </div>
+    </div>
 
 
 
+    <div class="section_product">
+        <div class="product_name">
+            <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+            <p class="articul">Артикул  BR019EWFZN94</p>
 
-                <?php echo $this->getChildHtml('other');?>
-
-                <?php if ($_product->isSaleable() && $this->hasOptions()):?>
-                    <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
-                <?php endif;?>
-
-            </div>
-
-            <div class="add-to-cart-wrapper">
-                <?php echo $this->getChildHtml('product_type_data') ?>
-                <?php echo $this->getChildHtml('extrahint') ?>
-
-                <?php if (!$this->hasOptions()):?>
-                    <div class="add-to-box">
-                        <?php if($_product->isSaleable()): ?>
-                            <?php echo $this->getChildHtml('addtocart') ?>
-                            <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
-                                <span class="or"><?php echo $this->__('OR') ?></span>
-                            <?php endif; ?>
-                        <?php endif; ?>
-                        <?php echo $this->getChildHtml('addto') ?>
-                        <?php echo $this->getChildHtml('sharing') ?>
-                    </div>
-                    <?php echo $this->getChildHtml('extra_buttons') ?>
-                <?php elseif (!$_product->isSaleable()): ?>
-                    <div class="add-to-box">
-                        <?php echo $this->getChildHtml('addto') ?>
-                        <?php echo $this->getChildHtml('sharing') ?>
-                    </div>
-                <?php endif; ?>
-            </div>
-
-            <?php echo $this->getChildHtml('related_products') ?>
-
-            <div class="clearer"></div>
             <?php if ($_product->isSaleable() && $this->hasOptions()):?>
-                <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+                <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
             <?php endif;?>
-        </form>
-        <script type="text/javascript">
-        //<![CDATA[
-            var productAddToCartForm = new VarienForm('product_addtocart_form');
-            productAddToCartForm.submit = function(button, url) {
-                if (this.validator.validate()) {
-                    var form = this.form;
-                    var oldUrl = form.action;
+        </div>
+        <div class="product_delivery">
+            <div class="payment">
+                <img src="/img/dopay.png" alt="" />
+                <a href="#" title="">ОПЛАТА</a>
+            </div>
+            <div class="delivery">
+                <img src="/img/delivery.png" alt="" />
+                <a href="#" title="">ДОСТАВКА</a>
+            </div>
+        </div>
+        <div class="product_description">
+            <p><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></p>
+        </div>
 
-                    if (url) {
-                       form.action = url;
-                    }
-                    var e = null;
-                    try {
-                        this.form.submit();
-                    } catch (e) {
-                    }
-                    this.form.action = oldUrl;
-                    if (e) {
-                        throw e;
-                    }
-
-                    if (button && button != 'undefined') {
-                        button.disabled = true;
-                    }
-                }
-            }.bind(productAddToCartForm);
-
-            productAddToCartForm.submitLight = function(button, url){
-                if(this.validator) {
-                    var nv = Validation.methods;
-                    delete Validation.methods['required-entry'];
-                    delete Validation.methods['validate-one-required'];
-                    delete Validation.methods['validate-one-required-by-name'];
-                    // Remove custom datetime validators
-                    for (var methodName in Validation.methods) {
-                        if (methodName.match(/^validate-datetime-.*/i)) {
-                            delete Validation.methods[methodName];
-                        }
-                    }
-
-                    if (this.validator.validate()) {
-                        if (url) {
-                            this.form.action = url;
-                        }
-                        this.form.submit();
-                    }
-                    Object.extend(Validation.methods, nv);
-                }
-            }.bind(productAddToCartForm);
-        //]]>
-        </script>
+        <table class="product_table">
+            <?php if($_product['size_photo']) : ?>
+                <tr>
+                    <td>Размер модели на фото </td>
+                    <td><?=$_product['size_photo']?></td>
+                </tr>
+            <?php endif; ?>
+            <?php if($_product['height_size']) : ?>
+                <tr>
+                    <td>Рост модели на фото </td>
+                    <td><?=$_product['height_size']?></td>
+                </tr>
+            <?php endif; ?>
+            <?php if($_product['option_model']) : ?>
+                <tr>
+                    <td>Параметры модели </td>
+                    <td><?=$_product['option_model']?></td>
+                </tr>
+            <?php endif; ?>
+            <?php if($_product['composition']) : ?>
+                <tr>
+                    <td>Состав </td>
+                    <td><?=$_product['composition']?></td>
+                </tr>
+            <?php endif; ?>
+            <?php if($_product['height_model']) : ?>
+                <tr>
+                    <td>Длина </td>
+                    <td><?=$_product['height_model']?></td>
+                </tr>
+            <?php endif; ?>
+            <?php if($_product['size_arm']) : ?>
+                <tr>
+                    <td>Длина рукава </td>
+                    <td><?=$_product['size_arm']?></td>
+                </tr>
+            <?php endif; ?>
+            <?php if($_product->getAttributeText('color_model')) : ?>
+                <tr>
+                    <td>Цвет </td>
+                    <td><?=$_product->getAttributeText('color_model')?></td>
+                </tr>
+            <?php endif; ?>
+            <?php if($_product->getAttributeText('type_knitwear')) : ?>
+                <tr>
+                    <td>Тип трикотажа </td>
+                    <td><?=$_product->getAttributeText('type_knitwear')?></td>
+                </tr>
+            <?php endif; ?>
+        </table>
     </div>
 
-    <div class="product-collateral toggle-content tabs">
-        <?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
-            <dl id="collateral-tabs" class="collateral-tabs">
-                <?php foreach ($detailedInfoGroup as $alias => $html):?>
-                    <dt class="tab"><span><?php echo $this->escapeHtml($this->getChildData($alias, 'title')) ?></span></dt>
-                    <dd class="tab-container">
-                        <div class="tab-content"><?php echo $html ?></div>
-                    </dd>
-                <?php endforeach;?>
-            </dl>
-        <?php endif; ?>
-    </div>
+</form>
 
-    <?php echo $this->getChildHtml('upsell_products') ?>
-    <?php echo $this->getChildHtml('product_additional_data') ?>
 
-</div>
+
+<script type="text/javascript">
+    //<![CDATA[
+    var productAddToCartForm = new VarienForm('product_addtocart_form');
+    productAddToCartForm.submit = function(button, url) {
+        if (this.validator.validate()) {
+            var form = this.form;
+            var oldUrl = form.action;
+
+            if (url) {
+                form.action = url;
+            }
+            var e = null;
+            try {
+                this.form.submit();
+            } catch (e) {
+            }
+            this.form.action = oldUrl;
+            if (e) {
+                throw e;
+            }
+
+            if (button && button != 'undefined') {
+                button.disabled = true;
+            }
+        }
+    }.bind(productAddToCartForm);
+
+    productAddToCartForm.submitLight = function(button, url){
+        if(this.validator) {
+            var nv = Validation.methods;
+            delete Validation.methods['required-entry'];
+            delete Validation.methods['validate-one-required'];
+            delete Validation.methods['validate-one-required-by-name'];
+            // Remove custom datetime validators
+            for (var methodName in Validation.methods) {
+                if (methodName.match(/^validate-datetime-.*/i)) {
+                    delete Validation.methods[methodName];
+                }
+            }
+
+            if (this.validator.validate()) {
+                if (url) {
+                    this.form.action = url;
+                }
+                this.form.submit();
+            }
+            Object.extend(Validation.methods, nv);
+        }
+    }.bind(productAddToCartForm);
+    //]]>
+</script>
+<style>
+    dt label {
+        display: none;
+    }
+</style>

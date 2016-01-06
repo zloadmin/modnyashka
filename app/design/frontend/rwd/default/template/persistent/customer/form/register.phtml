@@ -14,7 +14,6 @@
                 <label for="email_address" class="required"><em>*</em><?php echo $this->__('Email Address') ?></label>
                 <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="email_address" value="<?php echo $this->escapeHtml($this->getFormData()->getEmail()) ?>" title="<?php echo $this->quoteEscape($this->__('Email Address')) ?>" class="input-text validate-email required-entry" />
             </p>
-
             <?php $_dob = $this->getLayout()->createBlock('customer/widget_dob') ?>
             <?php if ($_dob->isEnabled()): ?>
                 <p><?php echo $_dob->setDate($this->getFormData()->getDob())->toHtml() ?></p>
