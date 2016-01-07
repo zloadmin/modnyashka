@@ -31,147 +31,67 @@
  * @var $this Mage_Checkout_Block_Cart
  */
 ?>
-<?php $_priceDisplay = ($this->helper('tax')->displayCartBothPrices()) ? 'display-both-prices' : 'display-single-price'; ?>
-<div class="cart <?php echo $_priceDisplay; ?>">
-    <div class="page-title title-buttons">
-        <h1><?php echo $this->__('Shopping Cart') ?></h1>
-        <?php if(!$this->hasError()): ?>
-        <ul class="checkout-types top">
-        <?php foreach ($this->getMethods('top_methods') as $method): ?>
-            <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
-            <li><?php echo $methodHtml; ?></li>
-            <?php endif; ?>
-        <?php endforeach; ?>
-        </ul>
-        <?php endif; ?>
-    </div>
-    <?php echo $this->getMessagesBlock()->toHtml() ?>
-    <?php echo $this->getChildHtml('form_before') ?>
-    <form action="<?php echo $this->getFormActionUrl() ?>" method="post">
-        <?php echo $this->getBlockHtml('formkey'); ?>
-        <table id="shopping-cart-table" class="cart-table data-table">
-            <col width="1" />
-            <col width="1" />
-            <col width="1" />
-            <col width="1" />
-            <col width="1" />
-            <col width="1" />
-            <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
-            <col width="1" />
-            <col width="1" />
-            <?php endif; ?>
+<div class="steps cart_steps">
+    <ul>
+        <li class="current_pos"><span>01</span> Корзина</li>
+        <li><span>02</span> Войти</li>
+        <li><span>03</span> Адрес</li>
+        <li><span>04</span> Доставка</li>
+        <li><span>05</span> Оплата</li>
+    </ul>
+</div>
+<h1 class="headicon hicon_about cart_container_h1">Корзина</h1>
+<?php echo $this->getMessagesBlock()->toHtml() ?>
+<?php echo $this->getChildHtml('form_before') ?>
 
-        <?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1); ?>
-            <thead>
-                <tr>
-                    <th rowspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Product') ?></span></th>
-
-                    <th rowspan="<?php echo $mergedCells; ?>">&nbsp;</th>
-
-                    <th class="a-center cart-price-head" colspan="<?php echo $mergedCells; ?>">
-<!--                            <div class="cart-price-placeholder">-->
-                            <span class="nobr"><?php echo $this->__('Price') ?></span>
-<!--                            </div>-->
-                    </th>
-
-                    <th rowspan="<?php echo $mergedCells; ?>" class="a-center">
-                        <?php echo $this->__('Qty') ?>
-
-                        <?php /*if ($this->helper('wishlist')->isAllowInCart()) : ?>
-                            <span class="nobr"><?php echo $this->__('Move to Wishlist') ?></span>
-                        <?php endif*/ ?>
-
-                    </th>
-
-                    <th class="a-center cart-total-head" colspan="<?php echo $mergedCells; ?>">
-<!--                            <div class="cart-total-placeholder">-->
-                            <?php echo $this->__('Subtotal') ?>
-<!--                            </div>-->
-                    </th>
-
-                    <th class="a-center" rowspan="<?php echo $mergedCells; ?>">&nbsp;</th>
-
-                </tr>
-                <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
-                <tr>
-                    <th class="a-center cart-price-head"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
-                    <th class="a-center cart-price-head"><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
-                    <th class="a-center cart-total-head"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
-                    <th class="a-center cart-total-head"><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
-                </tr>
-                <?php endif; ?>
-            </thead>
-            <tfoot>
-                <tr>
-                    <td colspan="50" class="a-right cart-footer-actions">
-
-                        <!-- Make this button the first responder rather than empty cart -->
-                        <button type="submit" style="visibility:hidden;" data-cart-item-update name="update_cart_action" value="update_qty" title="<?php echo $this->quoteEscape($this->__('Update Shopping Cart')); ?>" class="button2 btn-update"><span><span><?php echo $this->__('Update Shopping Cart'); ?></span></span></button>
-
-                        <button type="submit" name="update_cart_action" data-cart-empty value="empty_cart" title="<?php echo $this->quoteEscape($this->__('Empty Cart')); ?>" class="button2 btn-empty" id="empty_cart_button"><span><span><?php echo $this->__('Empty Cart'); ?></span></span></button>
-
-                        <button type="submit" name="update_cart_action" data-cart-item-update value="update_qty" title="<?php echo $this->quoteEscape($this->__('Update Shopping Cart')); ?>" class="button2 btn-update"><span><span><?php echo $this->__('Update Shopping Cart'); ?></span></span></button>
-
-                        <span class="or">-<?php echo $this->__('or'); ?>-</span>
-
-                        <?php if($this->getContinueShoppingUrl()): ?>
-                            <button type="button" title="<?php echo $this->quoteEscape($this->__('Continue Shopping')) ?>" class="button2 btn-continue" onclick="setLocation('<?php echo Mage::helper('core')->quoteEscape($this->getContinueShoppingUrl()) ?>')"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
-                        <?php endif; ?>
-                        <!--[if lt IE 8]>
-                        <input type="hidden" id="update_cart_action_container" data-cart-item-update />
-                        <script type="text/javascript">
-                        //<![CDATA[
-                            Event.observe(window, 'load', function()
-                            {
-                                // Internet Explorer (lt 8) does not support value attribute in button elements
-                                $emptyCartButton = $('empty_cart_button');
-                                $cartActionContainer = $('update_cart_action_container');
-                                if ($emptyCartButton && $cartActionContainer) {
-                                    Event.observe($emptyCartButton, 'click', function()
-                                    {
-                                        $emptyCartButton.setAttribute('name', 'update_cart_action_temp');
-                                        $cartActionContainer.setAttribute('name', 'update_cart_action');
-                                        $cartActionContainer.setValue('empty_cart');
-                                    });
-                                }
-
-                            });
-                        //]]>
-                        </script>
-                        <![endif]-->
-                    </td>
-                </tr>
-            </tfoot>
-            <tbody>
+<form action="<?php echo $this->getFormActionUrl() ?>" method="post">
+    <?php echo $this->getBlockHtml('formkey'); ?>
+    <div class="cart_container">
+        <ul class="cart_step_1_ul">
+            <li class="caption">
+                <p class="caption_cart_img">Продукт</p>
+                <p class="caption_cart_description">Описание</p>
+                <p class="caption_cart_code">Код</p>
+                <p class="caption_cart_price">Цена за единицу</p>
+                <p class="caption_cart_amount">Количество</p>
+                <p class="caption_cart_summ">Вместе</p>
+            </li>
             <?php foreach($this->getItems() as $_item): ?>
                 <?php echo $this->getItemHtml($_item) ?>
             <?php endforeach ?>
-            </tbody>
-        </table>
-        <script type="text/javascript">decorateTable('shopping-cart-table')</script>
-    </form>
-
-    <?php echo $this->getChildHtml('shopping.cart.table.after'); ?>
-    <div class="cart-forms">
-        <?php /* Extensions placeholder */ ?>
-        <?php echo $this->getChildHtml('checkout_cart_widget') ?>
-        <?php echo $this->getChildHtml('coupon') ?>
-        <?php echo $this->getChildHtml('checkout.cart.extra') ?>
-        <?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
-    </div>
-    <div class="cart-totals-wrapper">
-        <div class="cart-totals">
+        </ul>
+        <div class="cart_payment">
+            <div>
+                <p>Доступные формы оплаты: <a href="#" title="">Наличными,  банковский перевод, PayPal</a></p>
+                <p>Доступные формы: <a href="#" title="">Курьер и Почта Польша</a></p>
+            </div>
             <?php echo $this->getChildHtml('totals'); ?>
-            <?php if(!$this->hasError()): ?>
-            <ul class="checkout-types bottom">
-            <?php foreach ($this->getMethods('methods') as $method): ?>
-                <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
-                <li class="method-<?php echo preg_replace("/[^_a-zA-Z0-9-]/", '-', $method); ?>"><?php echo $methodHtml; ?></li>
-                <?php endif; ?>
-            <?php endforeach; ?>
-            </ul>
-            <?php endif; ?>
+        </div>
+        <div class="points">
+            <p class="avalible">Планируемые наличие: <a href="#" title="">Даже сегодня</a></p>
+            <label class="discount">СКИДКА ВАУЧЕРЫ <input type="text" name="discount"></label>
+            <a class="discount_how" href="#" title="">Как получить код скидки?</a>
+            <p class="points_amount">При оплате этой корзине вы можете получить до <span>17</span> бонусных баллов...</p>
+        </div>
+
+        <div class="cart_resume">
+            <a href="/" class="go_back">ПРОДОЛЖИТЬ ПОКУПКИ <img src="/img/1.png" alt=""></a>
+            <button>ПЕРЕЙТИ К ПОРЯДКУ <img src="/img/1.png" alt=""></button>
         </div>
     </div>
-    <?php echo $this->getChildHtml('crosssell') ?>
-</div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -6,18 +6,18 @@ jQuery(function() {
         speed: 800
     });
 
-    //$('.prev_count').click(function(e) {
-    //    if($('> .counter', $(this).parent('div')).val() > 0)
-    //    {
-    //        $('> .counter', $(this).parent('div')).val($('> .counter', $(this).parent('div')).val() - 1);
-    //    }
-    //    return false;
-    //});
-    //
-    //$('.next_count').click(function(e) {
-    //    $('> .counter', $(this).parent('div')).val(parseInt($('> .counter', $(this).parent('div')).val()) + 1);
-    //    return false;
-    //});
+    jQuery('.prev_count').click(function(e) {
+        if(jQuery('> .counter', jQuery(this).parent('div')).val() > 0)
+        {
+            jQuery('> .counter', jQuery(this).parent('div')).val(jQuery('> .counter', jQuery(this).parent('div')).val() - 1);
+        }
+        return false;
+    });
+
+    jQuery('.next_count').click(function(e) {
+        jQuery('> .counter', jQuery(this).parent('div')).val(parseInt(jQuery('> .counter', jQuery(this).parent('div')).val()) + 1);
+        return false;
+    });
     //
     //$('.payment_page li').click(function(e) {
     //    $('.payment_page li').removeClass('selected');
@@ -41,5 +41,5 @@ jQuery(function() {
     //    return false;
     //});
     //
-    //jQuery("a[rel=fancybox]").fancybox();
+    jQuery("a[rel=fancybox]").fancybox();
 });
