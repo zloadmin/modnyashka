@@ -1428,6 +1428,7 @@ select::-ms-expand
 .steps.cart_steps li:first-child, .steps.cart_steps li
 {
 	width:215px;
+    /*width:178px;*/
 }
 
 .steps.cart_steps span
@@ -3142,9 +3143,173 @@ input[type="radio"]:checked + label::before
     border-bottom:1px dashed #c3b4a2;
     margin-bottom:21px;
 }
-.checkout-cart-index {
+.checkout-cart-index, .checkout-onepage-index {
     padding-bottom: 18px;
     margin-bottom: 21px;
     margin-left: 44px;
     margin-top: 55px;
+}
+
+
+#discount-coupon-form button {
+    height: 28px;
+    border-bottom: 2px solid #ca540a;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    -webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;
+    width: 95px;
+    /*margin-left: 35px;*/
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f88866+0,ed5b2f+100 */
+    background: rgb(248,136,102); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y4ODg2NiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZDViMmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  rgba(248,136,102,1) 0%, rgba(237,91,47,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(248,136,102,1)), color-stop(100%,rgba(237,91,47,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(248,136,102,1) 0%,rgba(237,91,47,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(248,136,102,1) 0%,rgba(237,91,47,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(248,136,102,1) 0%,rgba(237,91,47,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(248,136,102,1) 0%,rgba(237,91,47,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f88866', endColorstr='#ed5b2f',GradientType=0 ); /* IE6-8 */
+
+    cursor: pointer;
+}
+.cart_steps dt {
+    display: inherit;
+}
+.cart_steps a {
+    color: #474032;
+    text-decoration: none;
+}
+#cart-login form p
+{
+    margin-bottom:19px;
+}
+
+#cart-login form input
+{
+    padding-left:10px;
+    width:309px;
+    height:30px;
+    background-color:#f8efe0;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border:1px solid #c9a989;
+
+    -moz-box-shadow:inset 2px 2px 2px rgba(0,0,0,0.1);
+    -webkit-box-shadow:inset 2px 2px 2px rgba(0,0,0,0.1);
+    box-shadow:inset 2px 2px 2px rgba(0,0,0,0.1);
+}
+#cart-login .step_2_form
+{
+    width:322px;
+    padding-right:90px;
+    margin-top:13px;
+    border-right:1px dashed #c3b4a2;
+}
+
+#cart-login .step_2_form label
+{
+    display:block;
+    margin-bottom:7px;
+}
+
+#cart-login .step_2_form  button
+{
+    width:116px;
+    margin-left:0;
+    float:right;
+    margin-top:-1px;
+}
+#cart-login-bottom
+{
+    /*background:url(../img/button.png) no-repeat 0 0;
+    line-height:0px;
+    text-align:left;*/
+
+    font-size:16px;
+    font-weight:bold;
+    color:#fff;
+    border:none;
+    width:174px;
+    padding:12px 0px 9px 0px;
+    cursor:pointer;
+    margin-left:275px;
+    margin-top:17px;
+
+    border-bottom: 2px solid #ca540a;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    -webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;
+    text-decoration: none;
+    background: rgb(248,136,102); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y4ODg2NiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZDViMmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  rgba(248,136,102,1) 0%, rgba(237,91,47,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(248,136,102,1)), color-stop(100%,rgba(237,91,47,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(248,136,102,1) 0%,rgba(237,91,47,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(248,136,102,1) 0%,rgba(237,91,47,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(248,136,102,1) 0%,rgba(237,91,47,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(248,136,102,1) 0%,rgba(237,91,47,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f88866', endColorstr='#ed5b2f',GradientType=0 ); /* IE6-8 */
+
+}
+#cart-login form label
+{
+    display:inline-block;
+    width:274px;
+    font-size:18px;
+    color:#474032;
+    font-family:"Trebuchet MS", Verdana, sans-serif;
+}
+
+#onepage-guest-register-button
+{
+    display: initial;
+    padding: 11px 0px;
+    text-align:center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    width:182px;
+    cursor: pointer;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:24px;
+    border-bottom: 2px solid #ca540a;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    text-decoration: none;
+    background: rgb(248,136,102);
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, rgba(248,136,102,1) 0%, rgba(237,91,47,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(248,136,102,1)), color-stop(100%,rgba(237,91,47,1)));
+    background: -webkit-linear-gradient(top, rgba(248,136,102,1) 0%,rgba(237,91,47,1) 100%);
+    background: -o-linear-gradient(top, rgba(248,136,102,1) 0%,rgba(237,91,47,1) 100%);
+    background: -ms-linear-gradient(top, rgba(248,136,102,1) 0%,rgba(237,91,47,1) 100%);
+    background: linear-gradient(to bottom, rgba(248,136,102,1) 0%,rgba(237,91,47,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f88866', endColorstr='#ed5b2f',GradientType=0 );
+    line-height: inherit;
+    font-size-adjust: inherit;
+    font-stretch: inherit;
+    font-feature-settings: inherit;
+    font-language-override: inherit;
+    font-kerning: inherit;
+    font-synthesis: inherit;
+    font-variant: inherit;
+    vertical-align: baseline;
+    font-family: "PT Sans",sans-serif;
+    font-style: inherit;
+    margin-top: 24px;
 }

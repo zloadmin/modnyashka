@@ -24,36 +24,36 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="block block-progress opc-block-progress<?php if (!$this->isCustomerLoggedIn()/* && !$this->getCheckout()->getStepData('billing', 'is_show')*/): ?> opc-block-progress-step-login<?php endif; ?>">
-    <div class="block-title">
-        <strong><span><?php echo $this->__('Your Checkout Progress') ?></span></strong>
-    </div>
-    <div class="block-content">
-        <dl>
-            <?php if ($this->getCheckout()->getStepData('billing', 'is_show')): ?>
-            <div id="billing-progress-opcheckout">
-                <?php echo $this->getChildHtml('billing.progress') ?>
-            </div>
-            <?php endif; ?>
+<div class="steps cart_steps">
+    <ul>
+        <?php $i=2 ?>
+        <li><a href="/index.php/checkout/cart/"><span>01</span> Корзина</a></li>
+        <?php if ($this->getCheckout()->getStepData('billing', 'is_show')): ?>
+            <li id="billing-progress-opcheckout">
+                <span><?=$i?></span> <?php echo $this->getChildHtml('billing.progress') ?>
+            </li>
+            <?php $i++ ?>
+        <?php endif; ?>
 
-            <?php if ($this->getCheckout()->getStepData('shipping', 'is_show')): ?>
-            <div id="shipping-progress-opcheckout">
-                <?php echo $this->getChildHtml('shipping.progress') ?>
-            </div>
-            <?php endif; ?>
+        <?php if ($this->getCheckout()->getStepData('shipping', 'is_show')): ?>
+            <li id="shipping-progress-opcheckout">
+                <span><?=$i?></span> <?php echo $this->getChildHtml('shipping.progress') ?>
+            </li>
+            <?php $i++ ?>
+        <?php endif; ?>
 
-            <?php if ($this->getCheckout()->getStepData('shipping_method', 'is_show')): ?>
-            <div id="shipping_method-progress-opcheckout">
-                <?php echo $this->getChildHtml('shippingmethod.progress') ?>
-            </div>
-            <?php endif; ?>
+        <?php if ($this->getCheckout()->getStepData('shipping_method', 'is_show')): ?>
+            <li id="shipping_method-progress-opcheckout">
+                <span><?=$i?></span> <?php echo $this->getChildHtml('shippingmethod.progress') ?>
+            </li>
+            <?php $i++ ?>
+        <?php endif; ?>
 
-            <?php if ($this->getCheckout()->getStepData('payment', 'is_show')): ?>
-            <div id="payment-progress-opcheckout">
-                <?php echo $this->getChildHtml('payment.progress') ?>
-            </div>
-            <?php endif; ?>
-        </dl>
-    </div>
+        <?php if ($this->getCheckout()->getStepData('payment', 'is_show')): ?>
+            <li id="payment-progress-opcheckout">
+                <span><?=$i?></span> <?php echo $this->getChildHtml('payment.progress') ?>
+            </li>
+            <?php $i++ ?>
+        <?php endif; ?>
+    </ul>
 </div>
-

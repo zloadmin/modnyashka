@@ -33,59 +33,64 @@
 ?>
 <div class="steps cart_steps">
     <ul>
-        <li class="current_pos"><span>01</span> Корзина</li>
-        <li><span>02</span> Войти</li>
-        <li><span>03</span> Адрес</li>
-        <li><span>04</span> Доставка</li>
-        <li><span>05</span> Оплата</li>
+        <li class="current_pos"><span>01</span> Резюме</li>
+        <li><span>02</span> Адрес плательщика</li>
+        <li><span>03</span> Адрес доставки</li>
+        <li><span>04</span> Метод доставки</li>
+        <li><span>05</span> Метод оплаты</li>
     </ul>
 </div>
 <h1 class="headicon hicon_about cart_container_h1">Корзина</h1>
 <?php echo $this->getMessagesBlock()->toHtml() ?>
 <?php echo $this->getChildHtml('form_before') ?>
 
-<form action="<?php echo $this->getFormActionUrl() ?>" method="post">
-    <?php echo $this->getBlockHtml('formkey'); ?>
-    <div class="cart_container">
-        <ul class="cart_step_1_ul">
-            <li class="caption">
-                <p class="caption_cart_img">Продукт</p>
-                <p class="caption_cart_description">Описание</p>
-                <p class="caption_cart_code">Код</p>
-                <p class="caption_cart_price">Цена за единицу</p>
-                <p class="caption_cart_amount">Количество</p>
-                <p class="caption_cart_summ">Вместе</p>
-            </li>
-            <?php foreach($this->getItems() as $_item): ?>
-                <?php echo $this->getItemHtml($_item) ?>
-            <?php endforeach ?>
-        </ul>
-        <div class="cart_payment">
-            <div>
-                <p>Доступные формы оплаты: <a href="#" title="">Наличными,  банковский перевод, PayPal</a></p>
-                <p>Доступные формы: <a href="#" title="">Курьер и Почта Польша</a></p>
+
+<div class="cart_container">
+    <form action="<?php echo $this->getFormActionUrl() ?>" method="post">
+                <?php echo $this->getBlockHtml('formkey'); ?>
+            <ul class="cart_step_1_ul">
+                <li class="caption">
+                    <p class="caption_cart_img">Продукт</p>
+                    <p class="caption_cart_description">Описание</p>
+                    <p class="caption_cart_code">Код</p>
+                    <p class="caption_cart_price">Цена за единицу</p>
+                    <p class="caption_cart_amount">Количество</p>
+                    <p class="caption_cart_summ">Вместе</p>
+                </li>
+                <?php foreach($this->getItems() as $_item): ?>
+                    <?php echo $this->getItemHtml($_item) ?>
+                <?php endforeach ?>
+            </ul>
+            <div class="cart_payment">
+                <div>
+                    <p>Доступные формы оплаты: <a href="#" title="">Наличными,  банковский перевод, PayPal</a></p>
+                    <p>Доступные формы: <a href="#" title="">Курьер и Почта Польша</a></p>
+                </div>
+                <?php echo $this->getChildHtml('totals'); ?>
             </div>
-            <?php echo $this->getChildHtml('totals'); ?>
-        </div>
-        <div class="points">
-            <p class="avalible">Планируемые наличие: <a href="#" title="">Даже сегодня</a></p>
-            <label class="discount">СКИДКА ВАУЧЕРЫ <input type="text" name="discount"></label>
-            <a class="discount_how" href="#" title="">Как получить код скидки?</a>
-            <p class="points_amount">При оплате этой корзине вы можете получить до <span>17</span> бонусных баллов...</p>
-        </div>
-
-        <div class="cart_resume">
-            <a href="/" class="go_back">ПРОДОЛЖИТЬ ПОКУПКИ <img src="/img/1.png" alt=""></a>
-            <button>ПЕРЕЙТИ К ПОРЯДКУ <img src="/img/1.png" alt=""></button>
-        </div>
+    </form>
+    <div class="cart-forms points">
+        <?php echo $this->getChildHtml('coupon') ?>
     </div>
-</form>
 
 
 
+    <div class="cart_resume">
+        <a href="/" class="go_back">ПРОДОЛЖИТЬ ПОКУПКИ <img src="/img/1.png" alt=""></a>
+<!--        <button>ПЕРЕЙТИ К ПОРЯДКУ <img src="/img/1.png" alt=""></button>-->
+        <?php if(!$this->hasError()): ?>
+
+                <?php foreach ($this->getMethods('methods') as $method): ?>
+                    <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
+                        <?php echo $methodHtml; ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+
+        <?php endif; ?>
+    </div>
 
 
-
+</div>
 
 
 
