@@ -63,13 +63,13 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
             <?php endif; ?>
         </p>
         <div class="count_cart count_cart_1">
-            <a href="#" class="prev_count" title=""></a>
-
+            <button style="border: 0;cursor: pointer;" href="#" class="prev_count" title="" type="submit" name="update_cart_action" value="update_qty" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Update')); ?>"></button>
             <input type="text" pattern="\d*" name="cart[<?php echo $_item->getId() ?>][qty]" value="<?php echo $this->getQty() ?>" size="4"
                    data-cart-item-id="<?php echo $this->jsQuoteEscape($_item->getSku()) ?>"
-                   title="<?php echo Mage::helper('core')->quoteEscape($this->__('Qty')) ?>" class="input-text qty counter" maxlength="12" />
+                   title="<?php echo Mage::helper('core')->quoteEscape($this->__('Qty')) ?>" class="input-text qty counter" maxlength="12" readonly />
 
-            <a href="#" class="next_count" title=""></a>
+            <button style="border: 0;cursor: pointer;" href="#" class="next_count" title="" type="submit" name="update_cart_action" value="update_qty" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Update')); ?>"></button>
+
         </div>
         <p class="price price_2">
             <?php if ($canApplyMsrp): ?>

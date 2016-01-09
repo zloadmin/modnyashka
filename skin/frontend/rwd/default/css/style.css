@@ -1570,6 +1570,7 @@ select::-ms-expand
 .cart_container_h1
 {
 	margin-top:30px;
+    margin-bottom:30px;
 }
 
 .cart_container li
@@ -3397,3 +3398,102 @@ input[type="radio"]:checked + label::before
     /*width: auto;*/
     /*padding-right: 22px;*/
 /*}*/
+#checkout-review-table-wrapper table {
+    width: 1101px;
+}
+
+#checkout-review-table-wrapper table thead {
+    border:none;
+    background-color:rgba(224,202,173,0.44);
+    margin-bottom:20px;
+    padding:0;
+    margin-top:-10px;
+    height: 43px;
+}
+#checkout-review-table-wrapper table thead tr th {
+    vertical-align: middle;
+}
+#checkout-review-table-wrapper table thead p {
+    display: inline-block;
+    vertical-align: top;
+    padding: 12px 0px 15px;
+    margin-left: 15px;
+}
+#checkout-review-table-wrapper table thead .a-center p {
+    text-align: center;
+    display: block;
+    margin: 0;
+}
+#checkout-review-table-wrapper table tr {
+    border-bottom: 1px dashed #C3B4A2;
+    padding-top: 0px;
+    padding-bottom: 28px;
+}
+
+#checkout-review-table-wrapper table tbody .item-options dt, #checkout-review-table-wrapper table tbody .item-options dd {
+    float: left;
+}
+
+#checkout-review-table-wrapper table .first-td-info {
+    padding-left: 15px;
+    padding-top: 15px;
+}
+#checkout-review-table-wrapper table .a-center {
+    text-align: center;
+}
+#checkout-review-table-wrapper table td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+#checkout-review-table-wrapper table tfoot td.last {
+    text-align: center;
+}
+#checkout-review-table-wrapper table tfoot td:first-child {
+    padding-left: 15px;
+
+}
+#review-buttons-container button {
+    display:block;
+    text-align:center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+
+
+    cursor: pointer;
+    margin-left:0;
+    margin-right:0;
+
+    border-bottom: 2px solid #ca540a;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    text-decoration: none;
+    background: rgb(248,136,102);
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, rgba(248,136,102,1) 0%, rgba(237,91,47,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(248,136,102,1)), color-stop(100%,rgba(237,91,47,1)));
+    background: -webkit-linear-gradient(top, rgba(248,136,102,1) 0%,rgba(237,91,47,1) 100%);
+    background: -o-linear-gradient(top, rgba(248,136,102,1) 0%,rgba(237,91,47,1) 100%);
+    background: -ms-linear-gradient(top, rgba(248,136,102,1) 0%,rgba(237,91,47,1) 100%);
+    background: linear-gradient(to bottom, rgba(248,136,102,1) 0%,rgba(237,91,47,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f88866', endColorstr='#ed5b2f',GradientType=0 );
+    float:right;
+    font-family: 'PT Sans', sans-serif;
+
+
+    position: relative;
+    width: 231px;
+    margin-top: 20px;
+    padding: 11px 0px 7px;
+}
+#checkoutSteps li {
+    width: 1101px;
+}
+#checkout-progress-wrapper ul li span:nth-child(2n) {
+    display: none;
+}

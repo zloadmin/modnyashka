@@ -26,7 +26,7 @@
 /** @var Mage_Checkout_Block_Onepage_Billing $this */
 ?>
 
-<h1 class="headicon hicon_about cart_container_h1">АДРЕС</h1>
+<h1 class="headicon hicon_about cart_container_h1">АДРЕС ПЛАТИЛЬШИКА</h1>
 
 <form id="co-billing-form" action="">
 
@@ -165,6 +165,10 @@
 
 
         </div>
+
+</div>
+
+
     <?php if ($this->canShip()): ?>
         <p class="control">
             <input type="radio" name="billing[use_for_shipping]" id="billing:use_for_shipping_yes" value="1"<?php if ($this->isUseBillingAddressForShipping()) {?> checked="checked"<?php }?> title="<?php echo $this->quoteEscape($this->__('Ship to this address')) ?>" onclick="$('shipping:same_as_billing').checked = true;" class="radio" /><label for="billing:use_for_shipping_yes"><?php echo  $this->__('Ship to this address') ?></label>
@@ -177,7 +181,6 @@
     <?php if (!$this->canShip()): ?>
         <input type="hidden" name="billing[use_for_shipping]" value="1" />
     <?php endif; ?>
-</div>
 
     <div class="buttons-set" id="billing-buttons-container">
         <a href="#" onclick="checkout.back(); return false;" class="go_back2">НАЗАД <img src="/img/1.png" alt="" /></a>

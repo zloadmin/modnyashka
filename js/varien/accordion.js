@@ -53,6 +53,20 @@ Accordion.prototype = {
             this.closeExistingSection();
             this.currentSection = section.id;
             $(this.currentSection).addClassName('active');
+
+            if(section.id=="opc-billing") {
+                $('billing-progress-opcheckout').addClassName('current_pos');
+            }
+            if(section.id=="opc-shipping") {
+                $('shipping-progress-opcheckout').addClassName('current_pos');
+            }
+            if(section.id=="opc-shipping_method") {
+                $('shipping_method-progress-opcheckout').addClassName('current_pos');
+            }
+            if(section.id=="opc-payment") {
+                $('payment-progress-opcheckout').addClassName('current_pos');
+            }
+
             var contents = Element.select(section, '.a-item');
             contents[0].show();
             //Effect.SlideDown(contents[0], {duration:.2});
@@ -73,6 +87,8 @@ Accordion.prototype = {
 
     closeSection: function(section) {
         $(section).removeClassName('active');
+        jQuery('#checkout-progress-wrapper ul li').removeClass('current_pos');
+        //console.log(section);
         var contents = Element.select(section, '.a-item');
         contents[0].hide();
         //Effect.SlideUp(contents[0]);

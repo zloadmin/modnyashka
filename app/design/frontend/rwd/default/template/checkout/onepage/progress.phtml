@@ -26,34 +26,31 @@
 ?>
 <div class="steps cart_steps">
     <ul>
-        <?php $i=2 ?>
-        <li><a href="/index.php/checkout/cart/"><span>01</span> Корзина</a></li>
+
+        <li><span>01</span><span>01</span> Корзина</li>
         <?php if ($this->getCheckout()->getStepData('billing', 'is_show')): ?>
             <li id="billing-progress-opcheckout">
-                <span><?=$i?></span> <?php echo $this->getChildHtml('billing.progress') ?>
+                <span>02</span> <?php echo $this->getChildHtml('billing.progress') ?>
             </li>
-            <?php $i++ ?>
+
         <?php endif; ?>
 
         <?php if ($this->getCheckout()->getStepData('shipping', 'is_show')): ?>
             <li id="shipping-progress-opcheckout">
-                <span><?=$i?></span> <?php echo $this->getChildHtml('shipping.progress') ?>
+                <span>03</span> <?php echo $this->getChildHtml('shipping.progress') ?>
             </li>
-            <?php $i++ ?>
         <?php endif; ?>
 
         <?php if ($this->getCheckout()->getStepData('shipping_method', 'is_show')): ?>
             <li id="shipping_method-progress-opcheckout">
-                <span><?=$i?></span> <?php echo $this->getChildHtml('shippingmethod.progress') ?>
+                <span>04</span> <?php echo $this->getChildHtml('shippingmethod.progress') ?>
             </li>
-            <?php $i++ ?>
         <?php endif; ?>
 
         <?php if ($this->getCheckout()->getStepData('payment', 'is_show')): ?>
             <li id="payment-progress-opcheckout">
-                <span><?=$i?></span> <?php echo $this->getChildHtml('payment.progress') ?>
+                <span>05</span> <?php echo $this->getChildHtml('payment.progress') ?>
             </li>
-            <?php $i++ ?>
         <?php endif; ?>
     </ul>
 </div>

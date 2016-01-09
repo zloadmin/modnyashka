@@ -7,16 +7,19 @@ jQuery(function() {
     });
 
     jQuery('.prev_count').click(function(e) {
+
         if(jQuery('> .counter', jQuery(this).parent('div')).val() > 0)
         {
             jQuery('> .counter', jQuery(this).parent('div')).val(jQuery('> .counter', jQuery(this).parent('div')).val() - 1);
         }
-        return false;
+
+        this.submit()
     });
 
     jQuery('.next_count').click(function(e) {
+
         jQuery('> .counter', jQuery(this).parent('div')).val(parseInt(jQuery('> .counter', jQuery(this).parent('div')).val()) + 1);
-        return false;
+        this.submit();
     });
     //
     //$('.payment_page li').click(function(e) {
