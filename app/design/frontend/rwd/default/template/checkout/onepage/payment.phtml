@@ -32,6 +32,7 @@
     var lastPrice;
 //]]>
 </script>
+<h1 class="headicon hicon_about cart_container_h1">ОПЛАТА</h1>
 <form action="" id="co-payment-form">
     <div class="fieldset">
         <?php echo $this->getChildChildHtml('methods_additional', '', true, true) ?>
@@ -46,8 +47,8 @@
 <div class="buttons-set" id="payment-buttons-container">
     <?php // Moved to CC form ?>
     <?php /* <p class="required"><?php echo $this->__('* Required Fields') ?></p> */ ?>
-    <p class="back-link"><a href="#" onclick="checkout.back(); return false;"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
-    <button type="button" class="button" onclick="payment.save()"><span><span><?php echo $this->__('Continue') ?></span></span></button>
+    <a href="#" onclick="checkout.back(); return false;" class="go_back2">НАЗАД <img src="/img/1.png" alt="" /></a>
+    <button type="button" class="button cart_step_button" onclick="payment.save()"><span><span><?php echo $this->__('Continue') ?></span></span></button>
     <span class="please-wait" id="payment-please-wait" style="display:none;">
         <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" alt="<?php echo Mage::helper('core')->quoteEscape($this->__('Loading next step...')) ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Loading next step...')) ?>" class="v-middle" /> <?php echo $this->__('Loading next step...') ?>
     </span>
