@@ -3497,3 +3497,18 @@ input[type="radio"]:checked + label::before
 #checkout-progress-wrapper ul li span:nth-child(2n) {
     display: none;
 }
+.checkout-onepage-success {
+    padding-bottom: 18px;
+    margin-bottom: 21px;
+    margin-left: 44px;
+    margin-top: 55px;
+}
+.last_step2 a {
+    color: #FF0101;
+}
+.last_step a {
+    color: #FF0101;
+}
+.cart_container_h1 {
+    text-transform: uppercase;
+}

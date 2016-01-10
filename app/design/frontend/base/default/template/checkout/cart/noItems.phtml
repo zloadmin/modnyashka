@@ -24,10 +24,17 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="page-title">
-    <h1><?php echo $this->__('Shopping Cart is Empty') ?></h1>
+<div class="steps cart_steps">
+    <ul>
+        <li class="current_pos"><span>01</span> Корзина</li>
+        <li><span>02</span> Адрес плательщика</li>
+        <li><span>03</span> Адрес доставки</li>
+        <li><span>04</span> Метод доставки</li>
+        <li><span>05</span> Метод оплаты</li>
+    </ul>
 </div>
-<div class="cart-empty">
+<h1 class="headicon hicon_about cart_container_h1"><?php echo $this->__('Shopping Cart is Empty') ?></h1>
+<div class="cart-empty last_step">
     <?php echo $this->getMessagesBlock()->toHtml() ?>
     <?php echo $this->getChildHtml('checkout_cart_empty_widget'); ?>
     <p><?php echo $this->__('You have no items in your shopping cart.') ?></p>
