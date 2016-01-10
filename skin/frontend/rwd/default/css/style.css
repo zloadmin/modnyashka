@@ -632,10 +632,10 @@ article {
     font-size: 16px;
 }
 .short_product section p span {
-    color: rgb(98, 88, 74);
-    font-weight: normal;
-    font-size: 11px;
-    vertical-align: bottom;
+    /*color: rgb(98, 88, 74);*/
+    /*font-weight: normal;*/
+    /*font-size: 11px;*/
+    /*vertical-align: bottom;*/
 }
 .short_product .buy {
 
@@ -887,7 +887,7 @@ footer .email a:hover {
 
 .pagination li:first-child, .pagination li:last-child
 {
-	width:auto;
+	/*width:auto;*/
 	margin-right:20px;
 }
 
@@ -3512,3 +3512,95 @@ input[type="radio"]:checked + label::before
 .cart_container_h1 {
     text-transform: uppercase;
 }
+.contacts-index-index {
+    margin-top: 12px;
+}
+.contacts-index-index form p {
+    margin-bottom: 19px;
+}
+
+.contacts-index-index form label {
+    display: inline-block;
+    width: 274px;
+    font-size: 18px;
+    color: #474032;
+    font-family: "Trebuchet MS",Verdana,sans-serif;
+    vertical-align: top;
+    margin-top: 8px;
+}
+.contacts-index-index form input {
+    padding-left: 10px;
+    width: 309px;
+    height: 30px;
+    background-color: #F8EFE0;
+    border-radius: 5px;
+    border: 1px solid #C9A989;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1) inset;
+}
+.contacts-index-index form textarea {
+    padding-left: 10px;
+    width: 309px;
+    height: 112px;
+    background-color: #F8EFE0;
+    border-radius: 5px;
+    border: 1px solid #C9A989;
+    resize: none;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1) inset;
+    font-family: "Trebuchet MS";
+}
+.contacts-index-index form label span {
+    color: #EC582C;
+}
+.contacts-index-index form button
+{
+    /*background-image:url(../img/send.png);*/
+    width:174px;
+    margin-left:422px;
+    margin-top:15px;
+
+    border-bottom: 2px solid #ca540a;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    -webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;
+    text-decoration: none;
+    background: rgb(248,136,102); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y4ODg2NiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZDViMmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  rgba(248,136,102,1) 0%, rgba(237,91,47,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(248,136,102,1)), color-stop(100%,rgba(237,91,47,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(248,136,102,1) 0%,rgba(237,91,47,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(248,136,102,1) 0%,rgba(237,91,47,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(248,136,102,1) 0%,rgba(237,91,47,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(248,136,102,1) 0%,rgba(237,91,47,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f88866', endColorstr='#ed5b2f',GradientType=0 ); /* IE6-8 */
+
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFF;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    padding: 12px 0px 9px;
+    cursor: pointer;
+}
+.filter ul li .active-limit {
+    background-color: #F57D5A;
+    border-radius: 40px;
+    cursor: default;
+    padding: 4px;
+    color: white;
+    text-decoration: none;
+}
+#toolbar-top .pager {
+    display: none;
+}
+#toolbar-bottom .filter {
+    display: none;
+}
+#toolbar-bottom .pager {
+    clear: both;
+}
+

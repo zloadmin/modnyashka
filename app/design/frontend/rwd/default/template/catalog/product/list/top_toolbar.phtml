@@ -1,0 +1,12 @@
+<div class="filter">
+    <ul>
+        <li>Показать по:</li>
+        <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
+            <li>
+                <a href="<?php echo $this->getLimitUrl($_key) ?>"<?php if($this->isLimitCurrent($_key)): ?> class="active-limit"<?php endif ?>>
+                    <?php echo $_limit ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

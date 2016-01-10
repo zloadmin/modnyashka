@@ -36,6 +36,19 @@
             <action method="setHeaderTitle" translate="title" module="contacts"><title>Contact Us</title></action>
         </reference>
         <update handle="cms_menu"/>
+        <reference name="root">
+            <action method="unsetChild"><alias>breadcrumbs</alias></action>
+            <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs">
+                <action method="addCrumb">
+                    <crumbName>home</crumbName>
+                    <crumbInfo><label>Главная</label><title>Главная</title><link>/</link></crumbInfo>
+                </action>
+                <action method="addCrumb">
+                    <crumbName>contacts</crumbName>
+                    <crumbInfo><label>Контакты</label><title>Контакты</title></crumbInfo>
+                </action>
+            </block>
+        </reference>
         <reference name="content">
             <block type="core/template" name="contactForm" template="contacts/form.phtml"/>
         </reference>
