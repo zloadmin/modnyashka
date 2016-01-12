@@ -1,0 +1,21 @@
+<menu>
+    <ul>
+        <?php
+        $_categories = Mage::getModel('catalog/category/')->getCollection()
+            ->addAttributeToSelect('name')
+            ->addAttributeToSelect('include_in_menu')
+            ->addAttributeToSelect('is_active')
+            ->addUrlRewriteToResult();
+        ?>
+        <?php foreach($_categories as $_category): ?>
+            <?php if($_category['include_in_menu'] AND $_category->getProductCount() > 0 ): ?>
+                <li>
+                    <a href="<?php echo $_category->getUrl($_category); ?>">
+                        <?php echo $_category->getName(); ?> (<?php echo $_category->getProductCount(); ?>)
+
+                    </a>
+                </li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </ul>
+</menu>

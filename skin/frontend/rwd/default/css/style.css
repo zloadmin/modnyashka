@@ -392,6 +392,7 @@ aside .news .seenews:hover {
 aside .feedback {
     margin-left: 50px;
     margin-top: 23px;
+    clear: both;
 }
 aside .feedback .headicon {
     padding-top: 0px;
@@ -3603,4 +3604,7 @@ input[type="radio"]:checked + label::before
 #toolbar-bottom .pager {
     clear: both;
 }
-
+#messages_product_view {
+    padding: 0px 0px 20px;
+    color: red;
+}

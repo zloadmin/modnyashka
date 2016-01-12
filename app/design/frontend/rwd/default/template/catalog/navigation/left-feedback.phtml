@@ -1,0 +1,30 @@
+<div class="feedback">
+    <h1 class="headicon hicon_mail">ОТПРАВИТЬ<br> СООБЩЕНИЕ</h1>
+    <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
+    <div class="feedbackform">
+        <form action="/index.php/contacts/index/post/" id="contactForm" method="post" class="scaffold-form">
+            <ul>
+                <li class="name">
+                    <input name="name" id="name" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Name')) ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserName()) ?>" class="input-text required-entry" type="text" placeholder="<?php echo Mage::helper('contacts')->__('Name') ?>" required />
+                </li>
+                <li class="email">
+                    <input name="email" id="email" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Email')) ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserEmail()) ?>" class="input-text required-entry validate-email" type="email" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="<?php echo Mage::helper('contacts')->__('Email') ?>" required />
+                </li>
+                <li class="text">
+                    <textarea name="comment" id="comment" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Comment')) ?>" class="required-entry input-text" placeholder="<?php echo Mage::helper('contacts')->__('Comment') ?>" required ></textarea>
+                </li>
+                <li class="submit">
+                    <button type="submit" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Submit')) ?>" class="button" style="text-transform: uppercase"><?php echo Mage::helper('contacts')->__('Submit') ?></button>
+                </li>
+            </ul>
+            <input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
+        </form>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    //<![CDATA[
+    var contactForm = new VarienForm('contactForm', true);
+    //]]>
+</script>

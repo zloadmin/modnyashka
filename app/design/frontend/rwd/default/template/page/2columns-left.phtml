@@ -14,38 +14,10 @@
                 <div class=""><?php echo $_leftContent;   ?></div>
             <?php endif; ?>
 
-<?php //echo $this->getChildHtml('left') ?>
-            <menu>
-                <ul>
-                    <?php
-                    $_categories = Mage::getModel('catalog/category')->getCollection()
-                        ->addAttributeToSelect('name')
-                        ->addAttributeToSelect('is_active')
-                        ->addUrlRewriteToResult();
-                    ?>
-
-                    <?php foreach($_categories as $_category): ?>
-                        <li>
-                            <a href="<?php echo $_category->getUrl($_category); ?>">
-                                <?php echo $_category->getName(); ?> (<?php echo $_category->getProductCount(); ?>)
-
-                            </a>
-                        </li>
-
-                    <?php endforeach; ?>
+<?php echo $this->getChildHtml('left') ?>
 
 
-                    <li><a href="#">Блузки (50)</a></li>
-                    <li><a href="#">Боди (4)</a></li>
-                    <li><a href="#">Туники (12)</a></li>
-                    <li><a href="#">Платья (11)</a></li>
-                    <li><a href="#">Брюки (32)</a></li>
-                    <li><a href="#">Кофты (23)</a></li>
-                    <li><a href="#">Шорты (2)</a></li>
-                    <li><a href="#">Юбки (45)</a></li>
-                    <li><a href="#">Пальто (22)</a></li>
-                </ul>
-            </menu>
+
         </aside>
         <article>
             <?php echo $this->getChildHtml('breadcrumbs') ?>
