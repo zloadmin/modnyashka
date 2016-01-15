@@ -60,7 +60,8 @@
 </div>
 <div class="popup" id="singlup">
     <div class="close"></div>
-    <form method="post">
+    <form method="post" action="/index.php/customer/account/loginPost/">
+        <?php echo $this->getBlockHtml('formkey'); ?>
         <p>ВХОД</p>
         <div class="social">
             <ul>
@@ -70,8 +71,8 @@
                 <li><a href="#"><img src="/img/socicon_gp.png" alt=""></a></li>
             </ul>
         </div>
-        <label>Email<input type="email" name="email"></label>
-        <label>Пароль<input type="password" name="pass"></label>
-        <button>ВОЙТИ <img src="img/1.png" alt=""></button><a href="#" title="">Забыли пароль?</a><a href="#" title="">Регистрация</a>
+        <label>Email<input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" class="input-text required-entry validate-email" id="login-email" name="login[username]" value="<?php echo $this->escapeHtml($this->getUsername()) ?>" /></label>
+        <label>Пароль<input type="password" class="input-text validate-password required-entry" id="login-password" name="login[password]" /></label>
+        <button>ВОЙТИ <img src="/img/1.png" alt=""></button><a href="/index.php/customer/account/create/" title="">Забыли пароль?</a><a href="/index.php/customer/account/forgotpassword/" title="">Регистрация</a>
     </form>
 </div>

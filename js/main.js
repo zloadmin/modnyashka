@@ -1,24 +1,24 @@
 
-jQuery(function() {
-    jQuery(".slower .carousel").jCarouselLite({
+$j(function() {
+    $j(".slower .carousel").jCarouselLite({
         btnNext: ".slower .next",
         btnPrev: ".slower .prev",
         speed: 800
     });
 
-    jQuery('.prev_count').click(function(e) {
+    $j('.prev_count').click(function(e) {
 
-        if(jQuery('> .counter', jQuery(this).parent('div')).val() > 0)
+        if($j('> .counter', $j(this).parent('div')).val() > 0)
         {
-            jQuery('> .counter', jQuery(this).parent('div')).val(jQuery('> .counter', jQuery(this).parent('div')).val() - 1);
+            $j('> .counter', $j(this).parent('div')).val($j('> .counter', $j(this).parent('div')).val() - 1);
         }
 
         this.submit()
     });
 
-    jQuery('.next_count').click(function(e) {
+    $j('.next_count').click(function(e) {
 
-        jQuery('> .counter', jQuery(this).parent('div')).val(parseInt(jQuery('> .counter', jQuery(this).parent('div')).val()) + 1);
+        $j('> .counter', $j(this).parent('div')).val(parseInt($j('> .counter', $j(this).parent('div')).val()) + 1);
         this.submit();
     });
     //
@@ -28,21 +28,21 @@ jQuery(function() {
     //    return false;
     //});
     //
-    //$('.popup .close').click(function(e) {
-    //    $('.fade').fadeOut('slow');
-    //    $('.popup').fadeOut('fast');
-    //});
-    //
-    //$('.fade').click(function(e) {
-    //    $('.fade').fadeOut('slow');
-    //    $('.popup').fadeOut('fast');
-    //});
-    //
-    //$('.userpanel li:first').click(function(e) {
-    //    $('.fade').fadeIn('slow');
-    //    $('.popup').fadeIn('fast');
-    //    return false;
-    //});
-    //
-    jQuery("a[rel=fancybox]").fancybox();
+    $j('.popup .close').click(function(e) {
+        $j('.fade').fadeOut('slow');
+        $j('.popup').fadeOut('fast');
+    });
+
+    $j('.fade').click(function(e) {
+        $j('.fade').fadeOut('slow');
+        $j('.popup').fadeOut('fast');
+    });
+
+    $j('#popsinglup').click(function(e) {
+        $j('.fade').fadeIn('slow');
+        $j('.popup').fadeIn('fast');
+        return false;
+    });
+
+    $j("a[rel=fancybox]").fancybox();
 });

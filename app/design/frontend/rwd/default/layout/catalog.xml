@@ -76,12 +76,15 @@ Category default layout
         </reference>
         <label>Catalog Category (Non-Anchor)</label>
         <reference name="left_first">
+
+            <!--<block type="clnews/news" name="news" template="clnews/list.phtml"/>-->
             <block type="catalog/navigation" name="catalog.leftmenu" after="currency" template="catalog/navigation/left-menu.phtml">
                 <block type="core/text_list" name="catalog.leftmenu.state.renderers" as="state_renderers" />
             </block>
-            <block type="catalog/navigation" name="catalog.leftnews" after="currency" template="catalog/navigation/left-news.phtml">
-                <block type="core/text_list" name="catalog.leftnews.state.renderers" as="state_renderers" />
-            </block>
+            <block type="clnews/news" name="news" template="clnews/left-news.phtml"/>
+            <!--<block type="catalog/navigation" name="catalog.leftnews" after="currency" template="catalog/navigation/left-news.phtml">-->
+                <!--<block type="core/text_list" name="catalog.leftnews.state.renderers" as="state_renderers" />-->
+            <!--</block>-->
             <block type="catalog/navigation" name="catalog.leftfeedback" after="currency" template="catalog/navigation/left-feedback.phtml">
                 <block type="core/text_list" name="catalog.leftfeedback.state.renderers" as="state_renderers" />
             </block>

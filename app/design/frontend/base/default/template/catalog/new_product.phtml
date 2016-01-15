@@ -1,0 +1,55 @@
+<?php
+//$category = Mage::getModel('catalog/category')->load(10);
+//$_products = $category->getProductCollection()->setPageSize(6)->setCurPage(1);
+
+//$_products = Mage::getModel('catalog/category')->load(10)
+//    ->getProductCollection()
+//    ->addAttributeToSelect('*')
+//    ->addAttributeToFilter('status', 1)
+//    ->addAttributeToFilter('visibility', 4)
+//    ->addAttributeToFilter('special_price', array('neq' => ""))
+//    ->setOrder('price', 'ASC')
+
+$categoryId = 10;
+$_products = Mage::getSingleton('catalog/category')->load($categoryId)
+    ->getProductCollection()->setPageSize(6)->setCurPage(1)
+    ->addAttributeToSelect('*');
+var_dump($_products->getSize());
+?>
+<?php if ($_products->getSize()): ?>
+    <div class="widget widget-new-products newproduct">
+        <div class="widget-title duablehead">
+            <h1 class="headicon hicon_new">НОВИНИКИ</h1>
+            <a href="#" class="seeall">смотреть все</a>
+        </div>
+        <div class="widget-products">
+            <?php echo $this->getPagerHtml() ?>
+            <?php $_columnCount = $this->getColumnCount(); ?>
+            <?php $i=0; ?>
+            <div class="products-grid products-grid--max-<?php echo $_columnCount; ?>-col-widget short_product">
+                <?php foreach ($_products->getItems() as $_product): ?>
+                    <section class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
+
+                        <?php $_imgSize = 210; ?>
+                        <img id="product-collection-image-<?php echo $_product->getId(); ?>"
+                             src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($_imgSize); ?>"
+                             alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"
+                             class="product_img" />
+
+                        <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image product_head">
+                            <?php echo $this->helper('catalog/output')->productAttribute($_product, $_product->getName() , 'name') ?>
+                        </a>
+                        <p><?php echo $this->getPriceHtml($_product, true) ?></p>
+
+                        <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="buy">
+                            <img src="/img/buy.png" alt="">
+                            <span>КУПИТЬ</span>
+                        </a>
+
+
+                    </section>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>

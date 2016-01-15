@@ -1,0 +1,148 @@
+a:5:{i:0;s:4432:"Invalid method Mage_Catalog_Model_Category::addCategoryFilter(Array
+(
+    [0] => Mage_Catalog_Model_Category Object
+        (
+            [_eventPrefix:protected] => catalog_category
+            [_eventObject:protected] => category
+            [_cacheTag:protected] => catalog_category
+            [_useFlatResource:protected] => 
+            [_designAttributes:Mage_Catalog_Model_Category:private] => Array
+                (
+                    [0] => custom_design
+                    [1] => custom_design_from
+                    [2] => custom_design_to
+                    [3] => page_layout
+                    [4] => custom_layout_update
+                    [5] => custom_apply_to_products
+                )
+
+            [_treeModel:protected] => 
+            [_urlModel:protected] => 
+            [_defaultValues:protected] => Array
+                (
+                )
+
+            [_storeValuesFlags:protected] => Array
+                (
+                )
+
+            [_lockedAttributes:protected] => Array
+                (
+                )
+
+            [_isDeleteable:protected] => 1
+            [_isReadonly:protected] => 
+            [_resourceName:protected] => catalog/category
+            [_resource:protected] => 
+            [_resourceCollectionName:protected] => catalog/category_collection
+            [_dataSaveAllowed:protected] => 1
+            [_isObjectNew:protected] => 
+            [_data:protected] => Array
+                (
+                    [entity_id] => 10
+                    [entity_type_id] => 3
+                    [attribute_set_id] => 3
+                    [parent_id] => 1
+                    [created_at] => 2016-01-13T16:24:00+05:00
+                    [updated_at] => 2016-01-13 11:25:35
+                    [path] => 1/10
+                    [position] => 4
+                    [level] => 1
+                    [children_count] => 0
+                    [name] => Новинки
+                    [meta_title] => 
+                    [display_mode] => PRODUCTS
+                    [custom_design] => 
+                    [page_layout] => 
+                    [url_key] => noviniki
+                    [is_active] => 1
+                    [include_in_menu] => 0
+                    [landing_page] => 
+                    [is_anchor] => 0
+                    [custom_use_parent_settings] => 0
+                    [custom_apply_to_products] => 0
+                    [description] => 
+                    [meta_keywords] => 
+                    [meta_description] => 
+                    [custom_layout_update] => 
+                    [available_sort_by] => 
+                    [custom_design_from] => 
+                    [custom_design_to] => 
+                    [filter_price_range] => 
+                )
+
+            [_hasDataChanges:protected] => 
+            [_origData:protected] => Array
+                (
+                    [entity_id] => 10
+                    [entity_type_id] => 3
+                    [attribute_set_id] => 3
+                    [parent_id] => 1
+                    [created_at] => 2016-01-13T16:24:00+05:00
+                    [updated_at] => 2016-01-13 11:25:35
+                    [path] => 1/10
+                    [position] => 4
+                    [level] => 1
+                    [children_count] => 0
+                    [name] => Новинки
+                    [meta_title] => 
+                    [display_mode] => PRODUCTS
+                    [custom_design] => 
+                    [page_layout] => 
+                    [url_key] => noviniki
+                    [is_active] => 1
+                    [include_in_menu] => 0
+                    [landing_page] => 
+                    [is_anchor] => 0
+                    [custom_use_parent_settings] => 0
+                    [custom_apply_to_products] => 0
+                    [description] => 
+                    [meta_keywords] => 
+                    [meta_description] => 
+                    [custom_layout_update] => 
+                    [available_sort_by] => 
+                    [custom_design_from] => 
+                    [custom_design_to] => 
+                    [filter_price_range] => 
+                )
+
+            [_idFieldName:protected] => entity_id
+            [_isDeleted:protected] => 
+            [_oldFieldsMap:protected] => Array
+                (
+                )
+
+            [_syncFieldsMap:protected] => Array
+                (
+                )
+
+        )
+
+)
+)";i:1;s:3374:"#0 W:\domains\magento19.local\app\design\frontend\base\default\template\catalog\new_product.phtml(30): Varien_Object->__call('addCategoryFilt...', Array)
+#1 W:\domains\magento19.local\app\design\frontend\base\default\template\catalog\new_product.phtml(30): Mage_Catalog_Model_Category->addCategoryFilter(Object(Mage_Catalog_Model_Category))
+#2 W:\domains\magento19.local\app\code\core\Mage\Core\Block\Template.php(241): include('W:\\domains\\mage...')
+#3 W:\domains\magento19.local\app\code\core\Mage\Core\Block\Template.php(272): Mage_Core_Block_Template->fetchView('frontend\\base\\d...')
+#4 W:\domains\magento19.local\app\code\core\Mage\Core\Block\Template.php(286): Mage_Core_Block_Template->renderView()
+#5 W:\domains\magento19.local\app\code\core\Mage\Core\Block\Abstract.php(919): Mage_Core_Block_Template->_toHtml()
+#6 W:\domains\magento19.local\app\code\core\Mage\Core\Block\Text\List.php(43): Mage_Core_Block_Abstract->toHtml()
+#7 W:\domains\magento19.local\app\code\core\Mage\Core\Block\Abstract.php(919): Mage_Core_Block_Text_List->_toHtml()
+#8 W:\domains\magento19.local\app\code\core\Mage\Core\Block\Abstract.php(637): Mage_Core_Block_Abstract->toHtml()
+#9 W:\domains\magento19.local\app\code\core\Mage\Core\Block\Abstract.php(581): Mage_Core_Block_Abstract->_getChildHtml('content', true)
+#10 W:\domains\magento19.local\app\design\frontend\rwd\default\template\page\2columns-left.phtml(26): Mage_Core_Block_Abstract->getChildHtml('content')
+#11 W:\domains\magento19.local\app\code\core\Mage\Core\Block\Template.php(241): include('W:\\domains\\mage...')
+#12 W:\domains\magento19.local\app\code\core\Mage\Core\Block\Template.php(272): Mage_Core_Block_Template->fetchView('frontend\\rwd\\de...')
+#13 W:\domains\magento19.local\app\code\core\Mage\Core\Block\Template.php(286): Mage_Core_Block_Template->renderView()
+#14 W:\domains\magento19.local\app\code\core\Mage\Core\Block\Abstract.php(919): Mage_Core_Block_Template->_toHtml()
+#15 W:\domains\magento19.local\app\code\core\Mage\Core\Model\Layout.php(555): Mage_Core_Block_Abstract->toHtml()
+#16 W:\domains\magento19.local\app\code\core\Mage\Core\Controller\Varien\Action.php(390): Mage_Core_Model_Layout->getOutput()
+#17 W:\domains\magento19.local\app\code\core\Mage\Cms\Helper\Page.php(137): Mage_Core_Controller_Varien_Action->renderLayout()
+#18 W:\domains\magento19.local\app\code\core\Mage\Cms\Helper\Page.php(52): Mage_Cms_Helper_Page->_renderPage(Object(Mage_Cms_IndexController), 'home')
+#19 W:\domains\magento19.local\app\code\core\Mage\Cms\controllers\IndexController.php(45): Mage_Cms_Helper_Page->renderPage(Object(Mage_Cms_IndexController), 'home')
+#20 W:\domains\magento19.local\app\code\core\Mage\Core\Controller\Varien\Action.php(418): Mage_Cms_IndexController->indexAction()
+#21 W:\domains\magento19.local\app\code\core\Mage\Core\Controller\Varien\Router\Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('index')
+#22 W:\domains\magento19.local\app\code\core\Mage\Core\Controller\Varien\Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#23 W:\domains\magento19.local\app\code\core\Mage\Core\Model\App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#24 W:\domains\magento19.local\app\Mage.php(684): Mage_Core_Model_App->run(Array)
+#25 W:\domains\magento19.local\index.php(83): Mage::run('', 'store')
+#26 {main}";s:3:"url";s:1:"/";s:11:"script_name";s:10:"/index.php";s:4:"skin";s:7:"default";}

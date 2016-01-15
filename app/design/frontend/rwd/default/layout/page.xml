@@ -54,7 +54,7 @@
                 <action method="addJs"><script>mage/translate.js</script></action>
 
 
-
+                <!--<action method="addJs"><script>commercelab/noconflict.js</script></action>-->
                 <!--<action method="addJs"><script>jquery.min.js</script></action>-->
                 <action method="addJs"><script>jquery.easing-1.3.js</script></action>
                 <action method="addJs"><script>jquery.mousewheel-3.1.12.js</script></action>
@@ -68,7 +68,7 @@
                 <block type="page/js_cookie" name="js_cookies" template="page/js/cookie.phtml"/>
 
                 <action method="addItem"><type>skin_css</type><name>css/style.css</name><params/></action>
-                <!--<action method="addItem"><type>skin_css</type><name>js/fancybox/jquery.fancybox-1.3.4.css</name><params/></action>-->
+                <action method="addItem"><type>skin_css</type><name>js/fancybox/jquery.fancybox-1.3.4.css</name><params/></action>
                 <!-- Sets viewport meta tag using text block -->
                 <block type="core/text" name="head.viewport">
                     <action method="setText"><text><![CDATA[<meta name="viewport" content="initial-scale=1.0, width=device-width" />]]>&#10;</text></action>
